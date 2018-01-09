@@ -1,0 +1,18 @@
+<div class="container-fluid">
+
+	<div class="form-group" >
+		<label> Filtre </label> 
+		<input type="text" ng-model="recherche.name" placeholder="Recherche par lettre" class="form-control"> 
+	</div>
+
+	<ul ng-repeat="data in liste">
+		<li>
+			<span ng-bind="data.id"></span>
+			<span ng-bind="data.name"> </span> 
+			<span> - </span> 
+			<span ng-bind="data.height"></span>
+			<a href="#!/personnages/{{data.id}}"> info </a>
+		</li>
+	</ul>
+
+</div>

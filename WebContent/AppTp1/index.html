@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html ng-app="myModule">
+<head>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+<script src="./js/myModule/myModule.js"></script>
+<script src="./js/controller/GlobalCtrl.js"></script>
+<script src="./js/filter/filter.js"></script>
+
+</head>
+
+
+<body ng-controller="GlobalCtrl">
+<header> <h1> </h1> </header>
+	<div class="form-group">
+		<label>Name:</label> <input type="text" ng-model="yourName"
+			ng-model-options="{ updateOn: 'blur'}"
+			placeholder="Enter a name here"  class="form-control"> 
+		<input type="text" ng-model="yourName"
+			ng-model-options="{ debounce: 200 }" placeholder="Name" class="form-control">
+
+		<h1>Hello {{yourName }}!</h1>
+	</div>
+
+	<ol class="list-group">
+		<li class="list-group-item" ng-click="choix(nom)"
+			ng-repeat="nom in list | filter : recherche | deLongueur : longueur">
+			<span ng-bind="nom "></span> 
+			< ! - -  {{personne.anniversaire | format:'dd/mm/yy'}} - - >
+		</li>
+	</ol>
+	<div class="form-group">
+		<input type="text" ng-model="recherche"
+			placeholder="Recherche par lettre" class="form-control"> <br> <input
+			type="number" ng-model="longueur"
+			placeholder="Recherche par longueur" class="form-control"> <br>
+	</div>
+ 
+<!-- <pre> pour garder le format json
+<pre>{{list|json}}</pre>-->
+<footer></footer>
+</body>
+
+</html>
+

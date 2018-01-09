@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html ng-app="myModule">
+<head>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+<script src="./js/myModule/myModule.js"></script>
+<script src="./js/controller/listController.js"></script>
+
+</head>
+
+
+<body ng-controller="GlobalCtrl">
+<header> <h1> </h1> </header>
+	<div class="form-group">
+	<label> Filtre </label> <input type="text" ng-model="recherche.name"
+		placeholder="Recherche par lettre" class="form-control"> <br>
+</div>
+
+<ul class="list-group">
+	<li ng-repeat="data in liste  | filter : recherche"
+		class="list-group-item"><span ng-bind="data.name"> </span> <span>
+			- </span> <span ng-bind="data.height"></span></li>
+</ul>
+ 
+<!-- <pre> pour garder le format json
+<pre>{{list|json}}</pre>-->
+<footer></footer>
+</body>
+
+</html>
+
+
+
