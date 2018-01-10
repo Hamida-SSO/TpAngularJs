@@ -9,10 +9,4 @@ angular.module('myModule').filter('deLongueur', function() {
 		
 		return output;
 	}
-	
-//	return function(input,longueur) {
-//		return input.filter(function(mot) {
-//			return ((mot.length==longueur) || (longueur == undefined));
-//		}
-//	}
 });

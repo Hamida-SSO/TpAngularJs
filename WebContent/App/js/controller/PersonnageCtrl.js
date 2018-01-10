@@ -1,8 +1,8 @@
-angular.module('myModule').controller('PersonnageCtrl', function($scope, $http, $routeParams) {
-	
-	$http.get('https://swapi.co/api/people/'+$routeParams.id).then(function(reponse) {
-		console.log(reponse);
-		$scope.personnage =reponse.data;
+angular.module('myModule').controller('PersonnageCtrl', function($scope, $routeParams, StarwarsService) {
+
+	StarwarsService.getOne($routeParams.id).then(function(reponse) {
+		$scope.personnage = reponse;
 	});
-	
+
+	//PeopleService.test(prom);
 }); 
