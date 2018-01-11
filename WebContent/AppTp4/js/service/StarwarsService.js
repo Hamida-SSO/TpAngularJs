@@ -4,15 +4,13 @@ angular.module('myModule').service('StarwarsService', ['$http', 'PeopleService',
 	
 	this.getAll = function() {
 		var p2 = p1.then(function(reponse) {
-		//	console.log(reponse.data.count);
 			var liste = reponse.data.results;
 			var listWithId = liste.map(function(perso) {
 				perso.id = PeopleService.caculateId(perso);
 				return perso;
 			});
 			return listWithId;
-		})
-		;		
+		});
 		return p2;
 	};
 	
@@ -29,26 +27,16 @@ angular.module('myModule').service('StarwarsService', ['$http', 'PeopleService',
 	
 }]);
 
-//var p1 =  $http.get('https://swapi.co/api/people', {params:{page:1}});
-//
-//this.getAll = function() {
-//	var p2 = p1.then(function(reponse) {
-//		var promises = [];
-//		var count = reponse.data.count;
-//		var nbPage = Math.ceil( count/10);
-//		for(var i =2; i< nbPage;i++ ) {
-//			promises = $http.get('https://swapi.co/api/people', {params:{page:i}}).then(function(reponse) {		
-//				var liste = reponse.data.results;
-//				var listWithId = liste.map(function(perso) {
-//					perso.id = PeopleService.caculateId(perso);
-//					return perso;
-//				});
-//				return listWithId
-//			 })
-//		}
+// 1ere version mais n'affiche que la première page		
+//var p2 = p1.then(function(reponse) {
+//	var liste = reponse.data.results;
+//	var listWithId = liste.map(function(perso) {
+//		perso.id = PeopleService.caculateId(perso);
+//		return perso;
 //	});
-//	return p2;
-//};
+//	return listWithId;
+//});
+//return p2;
 
 // 1ere version sans memorisation de l'Id
 //this.getOne = function(id) {

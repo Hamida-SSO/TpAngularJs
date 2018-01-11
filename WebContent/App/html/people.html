@@ -1,4 +1,4 @@
-<div class="container">
+<div >
 
 	<div class="row">
 		<div class="form-group form-group col-xs-8" >
@@ -8,16 +8,32 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<ul ng-repeat="data in liste | filter:recherche">
+
+			<ul ng-repeat="personnage in liste | filter:recherche">
 				<li>
-					<span ng-bind="data.id"></span>
+					<fiche-people value="personnage"></fiche-people>
+				
+<!--					<span ng-bind="personnage.id"></span>
+					<span ng-bind="personnage.name"> </span> 
+					<span> - </span> 
+					<span ng-show="personnage.gender=='male'">Homme</span>
+					<span ng-show="personnage.gender=='female'">Femme</span>
+					<span ng-show="personnage.gender=='n/a'">Autre</span>
+					<span sw-films="personnage"></span>
+					<a href="#!/personnages/{{personnage.id}}"> <span class="glyphicon glyphicon-eye-open"></span></a>
+-->				
+					<!-- <span ng-bind="data.id"></span>
 					<span ng-bind="data.name"> </span> 
 					<span> - </span> 
-					<span ng-bind="data.height"></span>
-					<a href="#!/personnages/{{data.id}}"> info </a>
+					<span ng-show="data.gender=='male'">Homme</span>
+					<span ng-show="data.gender=='female'">Femme</span>
+					<span ng-show="data.gender=='n/a'">Autre</span>
+					<span sw-films="data"></span>
+					<a href="#!/personnages/{{data.id}}"> <span class="glyphicon glyphicon-eye-open"></span></a> -->
 				</li>
-			</ul>
+			</ul> 
 		</div>
 	</div>
-	<pre>{{recherche|json}}</pre>
+	<!-- <pre>{{recherche|json}}</pre> -->
 </div>
+

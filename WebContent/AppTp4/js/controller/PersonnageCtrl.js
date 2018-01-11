@@ -3,4 +3,6 @@ angular.module('myModule').controller('PersonnageCtrl', function($scope, $routeP
 	StarwarsService.getOne($routeParams.id).then(function(reponse) {
 		$scope.personnage = reponse;
 	});
+
+	//PeopleService.test(prom);
 }); 
